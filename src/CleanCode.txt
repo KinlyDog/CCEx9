@@ -24,7 +24,6 @@ strLen - STRING_LENGTH
 6. заменил сравнение на равенство
 (j == 2)  -  (j > 1)
 
-
 7. изменил блок switch на улучшенный, согласно предупреждению компилятора
         switch (n) {
             case 1:
@@ -70,4 +69,12 @@ String delCh - StringBuilder delChar
 for (int i = 0; i < b.length; i++) sum += b[i];
 -
 for (int j : b) sum += j;
+
+10.
+for (int i = 0; i < ma.length; i++) strBld.append(ma[i]);
+-
+for (int j : ma) strBld.append(j);
+
+
+
 
