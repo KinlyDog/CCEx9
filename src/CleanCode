@@ -1,0 +1,73 @@
+1. Заменил участки кода согласно предупреждению компилятора,
+копирование массива осуществляется с помощью метода, а не вручную.
+for (int i = 0; i < n; i++) sortedPrice[i] = price[i]
+-
+System.arraycopy(price, 0, sortedPrice, 0, price.length);
+
+2.
+for (int i = 0; i < n; i++) sortedData[i] = data[i];
+-
+System.arraycopy(data, 0, sortedData, 0, n);
+
+3.
+for (int i = 0; i < count; i++) maTrans[i] = maTemp[i];
+-
+System.arraycopy(maTemp, 0, maTrans, 0, count);
+
+4. изменил название логической переменной на понятную
+сортировка пузырьком
+flag - isSorted
+
+5. переделал переменные в константы, исправил названия на более выразительные
+strLen - STRING_LENGTH
+
+6. заменил сравнение на равенство
+(j == 2)  -  (j > 1)
+
+
+7. изменил блок switch на улучшенный, согласно предупреждению компилятора
+        switch (n) {
+            case 1:
+                i++;
+                strBld.append(com);
+                break;
+
+            case 2:
+                i++;
+                if (strNum > strLen) strNum = strLen;
+
+                strBld.delete(strLen - strNum, strLen);
+                break;
+            ...
+            ...
+            default:
+                break;
+        }
+
+        на
+
+        switch (n) {
+            case 1 -> {
+                i++;
+                strBld.append(com);
+            }
+            case 2 -> {
+                i++;
+                if (strNum > strLen) strNum = strLen;
+                strBld.delete(strLen - strNum, strLen);
+            }
+            ...
+            ...
+            default -> {
+            }
+        }
+
+
+8. заменил изменяемую строку на метод StringBuilder, согласно предупреждению компилятора
+String delCh - StringBuilder delChar
+
+9. "Улучшил" цикл согласно предупреждениям компилятора
+for (int i = 0; i < b.length; i++) sum += b[i];
+-
+for (int j : b) sum += j;
+
